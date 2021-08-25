@@ -21,6 +21,7 @@ def id_ranges(span: int) -> None:
         sys.stdout.write(f"{num} ")
 
 def get_names(min_id: int , max_id: Optional[int] = None, printall: bool = False) -> None:
+    # it is possible for there to be an odd number of segments given to this by id_ranges
     if not max_id:
         max_id = min_id+1
     cur = con.cursor()
