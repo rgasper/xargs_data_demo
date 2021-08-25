@@ -2,6 +2,24 @@
 
 demonstration of using xargs and id iteration to process a big ol pile of data
 
+## run
+
+run the whole shebang, splitting up the table into 10 row chunks:
+
+```console
+python funcs.py id_ranges 10 | xargs -n 2 python funcs.py get_names
+```
+
+run just one of the functions:
+
+```console
+python funcs.py id_ranges 10
+```
+
+```console
+python funcs.py get_names 171 181 true
+```
+
 ## setup
 
 ```console
@@ -31,24 +49,6 @@ CREATE TABLE players (
   chance_of_playing_next_round integer,
   value_form real,
   ...
-```
-
-## run
-
-run the whole shebang, splitting up the table into 10 row chunks:
-
-```console
-python funcs.py id_ranges 10 | xargs -n 2 python funcs.py get_names
-```
-
-run just one of the functions:
-
-```console
-python funcs.py id_ranges 10
-```
-
-```console
- python funcs.py get_names 171 181 true
 ```
 
 ## note on stdout and stderr
